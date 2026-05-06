@@ -2,19 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>PlayPrompt — Nexus Luxembourg</title>
-
-  <!-- Reveal.js core + theme -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css" id="theme">
-
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlayPrompt — Nexus Luxembourg pitch deck</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --pp-orange: #F5A623;
@@ -23,605 +15,151 @@
       --pp-teal:   #2EAE9A;
       --pp-ink:    #1a1a2e;
       --pp-ink-soft: #3a3a52;
-      --pp-cream:  #FAF7F2;
-      --pp-cream-warm: #FFF6E8;
-      --pp-cream-soft: #FFFAF0;
     }
-
-    /* === SUNNY THEME — light cream base with brand-color accents === */
-    .reveal { font-family: 'Nunito', sans-serif; font-weight: 600; color: var(--pp-ink); }
-    .reveal .slides { text-align: left; }
-    .reveal section { overflow: hidden; }
-    .reveal .slide-background-content { background-color: var(--pp-cream); }
-
-    .reveal h1, .reveal h2, .reveal h3 {
-      font-family: 'Fraunces', serif;
-      text-transform: none;
-      letter-spacing: -1px;
-      line-height: 1.15;
-      font-weight: 900;
-      margin: 0 0 0.35em;
-      color: var(--pp-ink);
-    }
-    .reveal h1 { font-size: 4.0em; }
-    .reveal h2 { font-size: 2.2em; }
-    .reveal h3 { font-size: 1.0em; font-family: 'Nunito', sans-serif; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; opacity: 0.55; color: var(--pp-ink); }
-
-    .reveal p, .reveal li { font-size: 0.85em; line-height: 1.45; color: var(--pp-ink-soft); }
-
-    .reveal .subtitle { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; opacity: 0.85; }
-
-    /* Brand gradient text — used for punchline emphasis on light bg */
-    .grad {
-      background: linear-gradient(135deg, var(--pp-orange), var(--pp-coral), var(--pp-purple));
-      -webkit-background-clip: text; background-clip: text;
-      color: transparent;
-      display: inline-block;
-      padding-bottom: 0.08em;
-      line-height: 1.18;
-    }
-    /* Soft pastel gradient — for readable highlights on photo backgrounds */
-    .grad-soft {
-      background: linear-gradient(135deg, #FFD799, #F0AA9D, #C99CD9);
-      -webkit-background-clip: text; background-clip: text;
-      color: transparent;
-      display: inline-block;
-    }
-
-    /* === SUNNY GRADIENT BACKGROUNDS for content slides === */
-    .bg-sunny {
-      position: absolute; inset: 0;
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Nunito', sans-serif; font-weight: 600; color: var(--pp-ink);
       background:
         radial-gradient(at 15% 20%, rgba(245,166,35,0.18), transparent 50%),
         radial-gradient(at 85% 25%, rgba(232,115,108,0.14), transparent 55%),
         radial-gradient(at 90% 90%, rgba(46,174,154,0.12), transparent 50%),
         radial-gradient(at 10% 95%, rgba(155,89,182,0.10), transparent 50%),
         linear-gradient(135deg, #FFFAF0 0%, #FFF1DC 50%, #FFE9E0 100%);
+      min-height: 100vh;
     }
-    .bg-sunny.alt {
-      background:
-        radial-gradient(at 80% 15%, rgba(245,166,35,0.22), transparent 50%),
-        radial-gradient(at 15% 85%, rgba(155,89,182,0.14), transparent 55%),
-        linear-gradient(135deg, #FFF6E8 0%, #FFEEDC 60%, #F8E3F0 100%);
+    main {
+      max-width: 1100px; margin: 0 auto; padding: 56px 32px 72px;
     }
-    .bg-sunny.cool {
-      background:
-        radial-gradient(at 80% 80%, rgba(46,174,154,0.18), transparent 50%),
-        radial-gradient(at 20% 20%, rgba(245,166,35,0.16), transparent 50%),
-        linear-gradient(135deg, #FFFAF0 0%, #FFF1DC 50%, #E5F3F0 100%);
+    header {
+      display: flex; align-items: center; gap: 18px; margin-bottom: 8px;
     }
-
-    /* === HERO SLIDE === */
-    .hero {
-      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
-      text-align: center; height: 100%; padding-bottom: 44px; box-sizing: border-box;
-      position: relative; z-index: 2;
+    header img { width: 56px; height: auto; }
+    header h1 {
+      font-family: 'Fraunces', serif; font-weight: 900; letter-spacing: -1.5px;
+      font-size: 2.6rem; line-height: 1.05; margin: 0;
     }
-    .hero-row {
-      display: flex; align-items: center; justify-content: center; gap: 32px;
-      margin-bottom: 28px;
-    }
-    .hero img.logo { width: 150px; height: auto; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45)); }
-    .hero .tagline {
-      font-family: 'Fraunces', serif; font-style: italic;
-      font-size: 1.6em; opacity: 0.98; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,0.55);
-      text-align: left; line-height: 1.15;
-    }
-
-    /* === FULLBLEED IMAGE-FIRST SLIDE === */
-    .fullbleed {
-      position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: flex-start;
-      padding: 60px;
-    }
-    .fullbleed h2 {
-      font-size: 2.8em; max-width: 18ch; line-height: 1.05;
-      text-shadow: 0 4px 40px rgba(0,0,0,0.6);
-      color: #fff;
-    }
-    /* Slide 3 — denser text needs smaller size to fit two stacked lines */
-    .fullbleed.slim h2 { font-size: 1.9em; max-width: 22ch; }
-
-    /* Full-bleed background image */
-    .bg-img {
-      position: absolute; inset: 0;
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-    /* Soft gradient overlay so headline text reads against image */
-    .bg-img.dim::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0) 100%);
-    }
-    .bg-img.dim-strong::after {
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.40) 50%, rgba(0,0,0,0.10) 100%);
-    }
-    /* Legacy placeholder classes (now hidden) */
-    .ph-bg, .ph-note { display: none; }
-
-    /* === LOGO PRESENCE === */
-    /* Small corner mark on every slide except hero & closing */
-    .logo-corner {
-      position: absolute; top: 20px; right: 22px;
-      width: 38px; height: auto; opacity: 0.85; z-index: 5;
-    }
-    .logo-corner.on-photo { filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); opacity: 1; }
-    /* Wordmark on closing slide above the closing line */
-    .logo-wordmark {
-      width: 240px; height: auto; margin-bottom: 22px;
-      filter: drop-shadow(0 6px 18px rgba(0,0,0,0.35));
-    }
-    /* Inline product mark for slide 5 — small "PlayPrompt" reveal label */
-    .product-mark {
-      display: inline-flex; align-items: center; gap: 10px;
-      margin-bottom: 14px;
-    }
-    .product-mark img { width: 38px; height: auto; }
-    .product-mark span {
-      font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.1em;
-      letter-spacing: -0.5px;
+    header h1 .grad {
       background: linear-gradient(135deg, var(--pp-orange), var(--pp-coral), var(--pp-purple));
       -webkit-background-clip: text; background-clip: text; color: transparent;
     }
-
-    /* === SLIDE FRAMING === */
-    .slide-pad { padding: 36px 56px 54px; height: 100%; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; gap: 14px; position: relative; z-index: 2; }
-
-    /* === TAGS === */
-    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
-    .tag {
-      display: inline-block; padding: 5px 14px; border-radius: 999px;
-      font-size: 0.45em; font-weight: 800; letter-spacing: 0.7px; text-transform: uppercase;
-      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); color: #fff;
-      backdrop-filter: blur(8px);
+    .subtitle {
+      font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+      font-size: 1.2rem; color: var(--pp-ink-soft); margin: 0 0 36px 74px;
     }
-
-    /* === 4-PANEL GRID (light theme) === */
-    .panels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 8px; }
-    .panel {
-      background: #fff; border: 1px solid rgba(0,0,0,0.06);
-      border-radius: 14px; padding: 18px 14px; text-align: center;
-      box-shadow: 0 4px 14px rgba(245,166,35,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    .intro {
+      font-size: 1.0rem; line-height: 1.6; color: var(--pp-ink-soft);
+      max-width: 60ch; margin: 0 0 48px;
     }
-    .panel .icon { font-size: 1.7em; margin-bottom: 6px; display: block; }
-    .panel .label { font-size: 0.5em; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: var(--pp-purple); margin-bottom: 4px; }
-    .panel .title { font-size: 0.85em; font-weight: 900; line-height: 1.25; color: var(--pp-ink); }
-
-    /* === STAT BOXES (light theme) === */
-    .stat-row { display: flex; gap: 16px; }
-    .stat {
-      flex: 1; padding: 20px 14px; border-radius: 14px; text-align: center;
-      background: #fff; border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 4px 14px rgba(245,166,35,0.05), 0 1px 3px rgba(0,0,0,0.03);
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
     }
-    .stat .num {
-      font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.8em; line-height: 1;
-      background: linear-gradient(135deg, var(--pp-orange), var(--pp-coral), var(--pp-purple));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      margin-bottom: 6px;
+    a.card {
+      display: block; text-decoration: none; color: inherit;
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(245,166,35,0.08), 0 1px 3px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
-    .stat .lbl { font-size: 0.45em; color: var(--pp-ink-soft); text-transform: uppercase; letter-spacing: 0.8px; }
-
-    /* === TWO-COL === */
-    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-
-    /* === PIPELINE === */
-    .pipeline { display: flex; gap: 3px; align-items: center; margin-top: 8px; }
-    .step {
-      flex: 1; padding: 8px 4px 10px; border-radius: 6px; font-size: 0.4em;
-      font-weight: 800; text-align: center; text-transform: uppercase; letter-spacing: 0.4px; color: #fff;
-      line-height: 1.2; box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    a.card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(245,166,35,0.18), 0 2px 6px rgba(0,0,0,0.06);
     }
-    .arrow { opacity: 0.35; font-size: 0.7em; color: var(--pp-ink); }
-
-    /* === COMPARISON MATRIX (light theme) === */
-    .matrix { width: 100%; border-collapse: collapse; font-size: 0.55em; margin-top: 10px; color: var(--pp-ink); background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
-    .matrix th, .matrix td { padding: 8px 10px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.06); }
-    .matrix th { font-size: 0.85em; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--pp-purple); background: rgba(245,166,35,0.06); }
-    .matrix td.check { color: #10B981; font-weight: 900; text-align: center; font-size: 1.2em; }
-    .matrix td.cross { color: rgba(0,0,0,0.18); font-weight: 900; text-align: center; font-size: 1.2em; }
-    .matrix tr.us { background: linear-gradient(90deg, rgba(245,166,35,0.14), rgba(232,115,108,0.10), rgba(155,89,182,0.12)); }
-    .matrix tr.us td { font-weight: 800; }
-
-    /* === 3-CARD ROW (light theme) === */
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .card {
-      padding: 20px 18px; border-radius: 14px;
-      background: #fff; border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 4px 14px rgba(245,166,35,0.05), 0 1px 3px rgba(0,0,0,0.03);
+    .thumb {
+      aspect-ratio: 3 / 2; background-size: cover; background-position: center;
+      background-color: #f3eee6;
     }
-    .card.orange { border-top: 4px solid var(--pp-orange); }
-    .card.purple { border-top: 4px solid var(--pp-purple); }
-    .card.teal   { border-top: 4px solid var(--pp-teal); }
-    .card h3 { font-size: 0.85em; margin-bottom: 6px; opacity: 1; }
-    .card p { font-size: 0.6em; color: var(--pp-ink-soft); line-height: 1.4; }
-
-    /* === CLOSING SLIDE === */
-    .closing {
-      display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start;
-      text-align: left; height: 100%; padding: 212px 64px 56px; position: relative; z-index: 2;
-      max-width: 56%;
+    .body {
+      padding: 18px 22px 22px;
     }
-    .closing h2 {
-      font-size: 1.7em; margin-bottom: 12px; color: #fff;
-      text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    .body h2 {
+      font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.3rem;
+      margin: 0 0 4px; letter-spacing: -0.4px;
     }
-    .closing .contact {
-      margin-top: 16px; font-size: 0.55em; color: rgba(255,255,255,0.88); letter-spacing: 0.8px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    .body p {
+      margin: 0; font-size: 0.85rem; line-height: 1.45; color: var(--pp-ink-soft);
     }
-
-    /* === FOOTER PER SLIDE === */
-    .slide-no {
-      position: absolute; bottom: 18px; right: 28px;
-      font-size: 11px; font-weight: 800; opacity: 0.35; color: var(--pp-ink); z-index: 5;
+    .body .label {
+      display: inline-block; margin-top: 10px; font-size: 0.7rem; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase; color: var(--pp-purple);
     }
-    /* On photo slides, slide-no inverts to white */
-    section[data-photo] .slide-no { color: rgba(255,255,255,0.55); }
-
-    /* === REVEAL OVERRIDES === */
-    .reveal section { padding: 0 !important; height: 100%; overflow: hidden; background: var(--pp-cream); }
-    .reveal ul { list-style: none; padding: 0; margin: 0; }
-    .reveal ul li {
-      padding: 4px 0 4px 18px; position: relative; font-size: 0.7em; line-height: 1.4; color: var(--pp-ink-soft);
+    .pending .thumb {
+      background: linear-gradient(135deg, rgba(245,166,35,0.10), rgba(155,89,182,0.10));
+      display: flex; align-items: center; justify-content: center;
     }
-    .reveal ul li::before {
-      content: ''; position: absolute; left: 0; top: 13px; width: 7px; height: 7px;
-      border-radius: 50%; background: linear-gradient(135deg, var(--pp-orange), var(--pp-purple));
+    .pending .thumb::after {
+      content: "Generating…"; font-family: 'Fraunces', serif; font-style: italic;
+      font-size: 1.1rem; color: var(--pp-purple); opacity: 0.7;
     }
-    .reveal strong { color: var(--pp-ink); font-weight: 800; }
-
-    /* === FRAGMENTS === */
-    .reveal .slides section .fragment.fade-up {
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.5s, transform 0.5s;
-    }
-    .reveal .slides section .fragment.fade-up.visible {
-      opacity: 1; transform: translateY(0);
+    a.card.pending { pointer-events: none; opacity: 0.65; }
+    footer {
+      margin-top: 56px; font-size: 0.8rem; color: var(--pp-ink-soft);
+      text-align: center; opacity: 0.75;
     }
   </style>
 </head>
 <body>
+  <main>
+    <header>
+      <img src="logo-mark.svg" alt="">
+      <h1>Pick a <span class="grad">version</span>.</h1>
+    </header>
+    <p class="subtitle">PlayPrompt — Nexus Luxembourg pitch deck</p>
+    <p class="intro">
+      Five renderings of the same pitch. Same words, same flow — different visual
+      language for the children in the slides. The text and animations are
+      identical; only the imagery changes.
+    </p>
 
-<div class="reveal">
-  <div class="slides">
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 1 — HOOK -->
-    <!-- ============================================================ -->
-    <section data-transition="fade" data-photo>
-      <div class="bg-img" style="background-image: url('img/01-hero.png');"></div>
-      <div class="bg-img" style="background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.50) 100%);"></div>
-      <div class="hero">
-        <div class="hero-row">
-          <img class="logo" src="logo-playprompt-white.svg" alt="PlayPrompt">
-          <div class="tagline">Imagine it.<br>Play it.</div>
+    <div class="grid">
+      <a class="card" href="photo/">
+        <div class="thumb" style="background-image: url('photo/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>Photoreal</h2>
+          <p>Cinematic photographs, the original cut.</p>
+          <span class="label">Realistic</span>
         </div>
-        <div class="tag-row">
-          <span class="tag">For Children</span>
-          <span class="tag">AI-Powered</span>
-          <span class="tag">Family-Safe</span>
-          <span class="tag">Made in Luxembourg</span>
+      </a>
+
+      <a class="card" href="pencil/">
+        <div class="thumb" style="background-image: url('pencil/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>Pencil</h2>
+          <p>Hand-drawn black-and-white portraits. The closing slide keeps the colored logo as the only chromatic element.</p>
+          <span class="label">Monochrome</span>
         </div>
-      </div>
-    </section>
+      </a>
 
-    <!-- ============================================================ -->
-    <!-- SLIDE 2 — KIDS LOVE TO BUILD -->
-    <!-- ============================================================ -->
-    <section data-transition="fade" data-photo>
-      <div class="bg-img" style="background-image: url('img/02-kids-build.png');"></div>
-      <div class="bg-img dim"></div>
-      <img class="logo-corner on-photo" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="fullbleed">
-        <h2 style="display: flex; flex-direction: column; gap: 6px;">
-          <span>Children love to play.</span>
-          <span class="fragment fade-up">Children love to build.</span>
-          <span class="fragment fade-up grad-soft" style="font-size: 0.85em;">The greatest games let them do both.</span>
-        </h2>
-      </div>
-      <div class="slide-no">2</div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 3 — THE PROBLEM -->
-    <!-- ============================================================ -->
-    <section data-transition="fade" data-photo>
-      <div class="bg-img" style="background-image: url('img/03-problem.png');"></div>
-      <div class="bg-img dim-strong"></div>
-      <img class="logo-corner on-photo" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="fullbleed slim">
-        <h2 style="display: flex; flex-direction: column; gap: 12px; max-width: 24ch;">
-          <span>AI is the next world every child needs to learn.</span>
-          <span class="fragment fade-up grad-soft" style="font-size: 0.9em;">But the AI they meet today wasn't made for them.</span>
-        </h2>
-      </div>
-      <div class="slide-no">3</div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 4 — THE WHAT-IF -->
-    <!-- ============================================================ -->
-    <section data-transition="fade" data-photo>
-      <div class="bg-img" style="background-image: url('img/04-what-if.png');"></div>
-      <div class="bg-img dim"></div>
-      <img class="logo-corner on-photo" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="fullbleed">
-        <h2>What if <em>play</em> was<br>how they <span class="grad-soft">learned it?</span></h2>
-      </div>
-      <div class="slide-no">4</div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 5 — THE PRODUCT REVEAL -->
-    <!-- ============================================================ -->
-    <section data-transition="slide">
-      <div class="bg-sunny"></div>
-      <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="slide-pad">
-        <div class="product-mark">
-          <img src="logo-mark.svg" alt="">
-          <span>PlayPrompt</span>
+      <a class="card" href="cartoon/">
+        <div class="thumb" style="background-image: url('cartoon/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>Cartoon</h2>
+          <p>Bold lines, flat warm colors — a friendly modern animation feel.</p>
+          <span class="label">Illustrated</span>
         </div>
-        <h2 style="font-size: 1.9em; max-width: 22ch; margin: 0;">
-          A child describes a game.<br><span class="grad">In minutes, it's real.</span>
-        </h2>
-        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 22px; align-items: stretch;">
-          <div class="fragment fade-up" style="background: #fff; border-left: 4px solid var(--pp-orange); border-radius: 12px; padding: 18px 20px; font-family: 'Fraunces', serif; font-style: italic; font-size: 0.95em; line-height: 1.4; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 4px 14px rgba(245,166,35,0.10), 0 1px 3px rgba(0,0,0,0.04); color: var(--pp-ink);">
-            "a cat that catches falling stars on a rooftop"
-            <div style="font-size: 0.55em; font-style: normal; font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--pp-purple); margin-top: 8px; letter-spacing: 1px; text-transform: uppercase;">— Mia, age 8</div>
-          </div>
-          <div class="fragment fade-up" style="display: flex;">
-            <div style="flex: 1; background: rgba(255,255,255,0.6); border: 2px dashed rgba(155,89,182,0.4); border-radius: 12px; padding: 32px 16px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
-              <div style="font-size: 0.5em; font-weight: 800; letter-spacing: 1.5px; color: var(--pp-purple); text-transform: uppercase; margin-bottom: 8px;">Screenshot placeholder</div>
-              <div style="font-size: 0.55em; color: var(--pp-ink-soft); line-height: 1.4;">Real PlayPrompt-generated game in the browser.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="slide-no">5</div>
-    </section>
+      </a>
 
-    <!-- ============================================================ -->
-    <!-- SLIDE 6 — HOW IT WORKS (4 PANELS, FRAGMENTS) -->
-    <!-- ============================================================ -->
-    <section data-transition="slide">
-      <div class="bg-sunny alt"></div>
-      <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="slide-pad">
-        <div>
-          <h2 style="font-size: 1.9em; margin: 0;">How it works</h2>
-          <p style="font-size: 0.75em; color: var(--pp-purple); font-weight: 700; margin: 6px 0 0; letter-spacing: 0.3px;">Browser-based · Safe by design · Five age brackets</p>
+      <a class="card" href="polygon/">
+        <div class="thumb" style="background-image: url('polygon/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>Polygon</h2>
+          <p>Stylized low-poly 3D characters, like indie game avatars.</p>
+          <span class="label">Geometric 3D</span>
         </div>
-        <div class="panels">
-          <div class="panel fragment fade-up">
-            <span class="icon">✏️</span>
-            <div class="label">1 · Describe</div>
-            <div class="title">In their own words</div>
-          </div>
-          <div class="panel fragment fade-up">
-            <span class="icon">⚙️</span>
-            <div class="label">2 · Create</div>
-            <div class="title">Code, art &amp; music</div>
-          </div>
-          <div class="panel fragment fade-up">
-            <span class="icon">🎮</span>
-            <div class="label">3 · Play</div>
-            <div class="title">Instantly, in browser</div>
-          </div>
-          <div class="panel fragment fade-up">
-            <span class="icon">✨</span>
-            <div class="label">4 · Iterate</div>
-            <div class="title">"Make the dragon faster"</div>
-          </div>
+      </a>
+
+      <a class="card pending" href="papercut/">
+        <div class="thumb"></div>
+        <div class="body">
+          <h2>Paper-cut</h2>
+          <p>Layered colored paper, hand-crafted collage with soft shadows.</p>
+          <span class="label">Hand-made</span>
         </div>
-      </div>
-      <div class="slide-no">6</div>
-    </section>
+      </a>
+    </div>
 
-    <!-- ============================================================ -->
-    <!-- SLIDE 7 — WHY US -->
-    <!-- ============================================================ -->
-    <section data-transition="slide">
-      <div class="bg-sunny cool"></div>
-      <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="slide-pad">
-        <h2 style="font-size: 1.9em; margin: 0;">Why us</h2>
-        <div class="two">
-          <div>
-            <h3 style="margin-bottom: 6px; color: var(--pp-purple); opacity: 1;">The team</h3>
-            <p style="font-size: 0.75em; line-height: 1.5; margin: 0;">
-              <strong>Anselmo Talotta — Founder.</strong><br>
-              AI at Amazon · Games at Blizzard · Father · Scout leader
-            </p>
-            <p style="font-size: 0.75em; line-height: 1.5; margin: 8px 0 0;">
-              <strong>Ruggero Golini — Advisor.</strong><br>
-              PwC · University of Luxembourg · Co-originator · Father
-            </p>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 6px; color: var(--pp-purple); opacity: 1;">The technological edge</h3>
-            <ul style="margin: 0;">
-              <li style="font-size: 0.75em;">Multi-agent AI pipeline — not a chatbot wrapper</li>
-              <li style="font-size: 0.75em;">Age-adaptive, grounded in child psychology</li>
-              <li style="font-size: 0.75em;">Multi-modal: code, sprites and music together</li>
-            </ul>
-          </div>
-        </div>
-        <div class="pipeline">
-          <div class="step" style="background: #EF4444;">Guardian</div>
-          <span class="arrow">→</span>
-          <div class="step" style="background: #F59E0B;">Interpreter</div>
-          <span class="arrow">→</span>
-          <div class="step" style="background: #8B5CF6;">Designer</div>
-          <span class="arrow">→</span>
-          <div class="step" style="background: #3B82F6;">Coder</div>
-          <span class="arrow">→</span>
-          <div class="step" style="background: #10B981;">Critic</div>
-          <span class="arrow">→</span>
-          <div class="step" style="background: #EC4899;">Enricher</div>
-          <span class="arrow">→</span>
-          <div class="step" style="background: #6366F1;">Deliver</div>
-        </div>
-      </div>
-      <div class="slide-no">7</div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 8 — MARKET & WHITESPACE -->
-    <!-- ============================================================ -->
-    <section data-transition="slide">
-      <div class="bg-sunny"></div>
-      <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="slide-pad">
-        <h2 style="font-size: 1.9em; margin: 0;">An empty seat<br><span class="grad">at a fast-growing table.</span></h2>
-        <div class="stat-row">
-          <div class="stat fragment fade-up">
-            <div class="num">$40B</div>
-            <div class="lbl">K-12 EdTech, 2026</div>
-          </div>
-          <div class="stat fragment fade-up">
-            <div class="num">$2B → $9B</div>
-            <div class="lbl">AI Game Gen, '26 → '34</div>
-          </div>
-          <div class="stat fragment fade-up">
-            <div class="num">200M+</div>
-            <div class="lbl">Play Minecraft monthly</div>
-          </div>
-        </div>
-        <table class="matrix fragment fade-up">
-          <thead>
-            <tr>
-              <th>14 platforms scanned</th>
-              <th>Multi-modal</th>
-              <th>Age-adaptive</th>
-              <th>Child-safe</th>
-              <th>Parents</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Rosebud, Jabali, Replit, SEELE…</td>
-              <td class="check">✓</td>
-              <td class="cross">—</td>
-              <td class="cross">—</td>
-              <td class="cross">—</td>
-            </tr>
-            <tr class="us">
-              <td>PlayPrompt</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="slide-no">8</div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 9 — BUSINESS MODEL -->
-    <!-- ============================================================ -->
-    <section data-transition="slide">
-      <div class="bg-sunny alt"></div>
-      <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="slide-pad">
-        <h2 style="font-size: 1.9em; margin: 0;">Free to play. <span class="grad">Credits to create.</span><br>Plans for schools.</h2>
-        <div class="cards">
-          <div class="card orange fragment fade-up">
-            <h3 style="color: var(--pp-orange);">Free Players</h3>
-            <p>Discovery and word-of-mouth. No account needed.</p>
-          </div>
-          <div class="card purple fragment fade-up">
-            <h3 style="color: var(--pp-purple);">Creators</h3>
-            <p>Credits — same model as Midjourney, Runway, ElevenLabs.</p>
-          </div>
-          <div class="card teal fragment fade-up">
-            <h3 style="color: var(--pp-teal);">Schools</h3>
-            <p>Per-seat plans, classroom dashboard.</p>
-          </div>
-        </div>
-        <p class="fragment fade-up" style="font-size: 0.95em; text-align: center; margin: 0; font-weight: 800; color: var(--pp-ink);">
-          Profitable per game from day one. <span style="color: var(--pp-purple);">€1–€2 today, falling.</span>
-        </p>
-      </div>
-      <div class="slide-no">9</div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 10 — WHY LUXEMBOURG / EUROPE -->
-    <!-- ============================================================ -->
-    <section data-transition="slide">
-      <div class="bg-sunny cool"></div>
-      <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
-      <div class="slide-pad">
-        <h2 style="font-size: 1.9em; margin: 0;">Built in Luxembourg.<br><span class="grad">Made for Europe.</span></h2>
-        <div class="two">
-          <div>
-            <h3 style="margin-bottom: 6px; color: var(--pp-purple); opacity: 1;">Why Luxembourg</h3>
-            <ul style="margin: 0;">
-              <li style="font-size: 0.75em;">Founder, advisor and roots here</li>
-              <li style="font-size: 0.75em;">Aligned with the MENJE digital strategy</li>
-              <li style="font-size: 0.75em;">Pilot-ready ecosystem for schools</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin-bottom: 6px; color: var(--pp-purple); opacity: 1;">Why this is a moat</h3>
-            <ul style="margin: 0;">
-              <li style="font-size: 0.75em;">EU AI Act (Aug 2026): kids = vulnerable group</li>
-              <li style="font-size: 0.75em;">DSA: no profiling-based ads to minors</li>
-              <li style="font-size: 0.75em;">Designed for kids — not retrofitted</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="slide-no">10</div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- SLIDE 11 — CLOSING -->
-    <!-- ============================================================ -->
-    <section data-transition="fade" data-photo>
-      <div class="bg-img" style="background-image: url('img/11-closing.png');"></div>
-      <div class="bg-img" style="background: linear-gradient(45deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 28%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0) 75%);"></div>
-      <div class="closing">
-        <h2>Children will not<br>just <em>consume</em> AI.<br>
-          They will <span class="grad-soft">create with it.</span></h2>
-        <p style="font-size: 0.95em; font-family: 'Fraunces', serif; font-style: italic; color: rgba(255,255,255,0.92); margin: 0; text-shadow: 0 2px 12px rgba(0,0,0,0.5);">
-          PlayPrompt is where that begins.
-        </p>
-        <div class="contact">
-          playprompt.org &nbsp;·&nbsp; hello@playprompt.org &nbsp;·&nbsp; Luxembourg
-        </div>
-      </div>
-      <div class="slide-no">11</div>
-    </section>
-
-  </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
-<script>
-  Reveal.initialize({
-    width: 1280,
-    height: 720,
-    margin: 0,
-    minScale: 0.2,
-    maxScale: 2.0,
-    controls: true,
-    progress: true,
-    history: true,
-    keyboard: true,
-    overview: true,
-    center: false,
-    transition: 'slide',
-    transitionSpeed: 'default',
-    backgroundTransition: 'fade',
-    pdfSeparateFragments: true,
-    pdfMaxPagesPerSlide: 1
-  });
-</script>
-
+    <footer>playprompt.org · hello@playprompt.org · Luxembourg</footer>
+  </main>
 </body>
 </html>

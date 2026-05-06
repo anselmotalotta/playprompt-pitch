@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="60 30 290 360" width="290" height="360">
+  <defs>
+    <linearGradient id="playGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5A623"/>
+      <stop offset="35%" stop-color="#E8736C"/>
+      <stop offset="65%" stop-color="#9B59B6"/>
+      <stop offset="100%" stop-color="#2EAE9A"/>
+    </linearGradient>
+    <mask id="starCutout">
+      <rect width="400" height="480" fill="white"/>
+      <path d="M195,155 L210,195 L250,210 L210,225 L195,265 L180,225 L140,210 L180,195 Z" fill="black"/>
+    </mask>
+  </defs>
+  <path d="M80,60 Q80,35 105,45 L310,170 Q340,188 340,215 Q340,242 310,260 L105,385 Q80,395 80,370 Z"
+        fill="url(#playGrad)" mask="url(#starCutout)"/>
+  <path d="M295,85 L302,105 L322,112 L302,119 L295,139 L288,119 L268,112 L288,105 Z" fill="#F5A623"/>
+  <path d="M320,65 L323,73 L331,76 L323,79 L320,87 L317,79 L309,76 L317,73 Z" fill="#F5A623" opacity="0.7"/>
+</svg>
