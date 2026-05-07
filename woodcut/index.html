@@ -223,6 +223,29 @@
     }
     .arrow { opacity: 0.35; font-size: 0.7em; color: var(--pp-ink); }
 
+    /* === DIFFERENTIATOR PANELS (slide 8) === */
+    .diffs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 4px; }
+    .diff {
+      background: #fff; border: 1px solid rgba(0,0,0,0.06);
+      border-top: 4px solid var(--pp-purple);
+      border-radius: 12px; padding: 14px 16px;
+      box-shadow: 0 4px 14px rgba(245,166,35,0.06), 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .diff:nth-child(1) { border-top-color: var(--pp-orange); }
+    .diff:nth-child(2) { border-top-color: var(--pp-purple); }
+    .diff:nth-child(3) { border-top-color: var(--pp-teal); }
+    .diff-title {
+      font-family: 'Fraunces', serif; font-weight: 900; font-size: 0.78em;
+      line-height: 1.2; color: var(--pp-ink); margin-bottom: 6px;
+    }
+    .diff-body {
+      font-size: 0.6em; line-height: 1.45; color: var(--pp-ink-soft);
+    }
+    .peers {
+      font-size: 0.55em; color: var(--pp-ink-soft); opacity: 0.75;
+      font-style: italic; margin: 4px 0 0; line-height: 1.4;
+    }
+
     /* === COMPARISON MATRIX (light theme) === */
     .matrix { width: 100%; border-collapse: collapse; font-size: 0.55em; margin-top: 10px; color: var(--pp-ink); background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.04); }
     .matrix th, .matrix td { padding: 8px 10px; text-align: left; border-bottom: 1px solid rgba(0,0,0,0.06); }
@@ -495,7 +518,7 @@
       <div class="bg-sunny"></div>
       <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
       <div class="slide-pad">
-        <h2 style="font-size: 1.9em; margin: 0;">An empty seat<br><span class="grad">at a fast-growing table.</span></h2>
+        <h2 style="font-size: 1.9em; margin: 0;">Early in a young category —<br><span class="grad">differentiated by design.</span></h2>
         <div class="stat-row">
           <div class="stat fragment fade-up">
             <div class="num">$40B</div>
@@ -510,33 +533,21 @@
             <div class="lbl">Play Minecraft monthly</div>
           </div>
         </div>
-        <table class="matrix fragment fade-up">
-          <thead>
-            <tr>
-              <th>14 platforms scanned</th>
-              <th>Multi-modal</th>
-              <th>Age-adaptive</th>
-              <th>Child-safe</th>
-              <th>Parents</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Rosebud, Jabali, Replit, SEELE…</td>
-              <td class="check">✓</td>
-              <td class="cross">—</td>
-              <td class="cross">—</td>
-              <td class="cross">—</td>
-            </tr>
-            <tr class="us">
-              <td>PlayPrompt</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-              <td class="check">✓</td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="diffs fragment fade-up">
+          <div class="diff">
+            <div class="diff-title">Multi-modal AI generation</div>
+            <div class="diff-body">Code + AI sprites + AI music + cover art — every game.</div>
+          </div>
+          <div class="diff">
+            <div class="diff-title">Age-adaptive across 5 brackets</div>
+            <div class="diff-body">Grounded in developmental psychology — Piaget, Vygotsky, Resnick.</div>
+          </div>
+          <div class="diff">
+            <div class="diff-title">Architected for EU AI Act + DSA</div>
+            <div class="diff-body">Designed for the EU regime from day one — not retrofitted.</div>
+          </div>
+        </div>
+        <p class="peers fragment fade-up">Roblox Studio added agentic AI in April 2026; ChickChick is the closest direct peer (voice-first, code-only). Full landscape in the companion.</p>
       </div>
       <div class="slide-no">8</div>
     </section>
