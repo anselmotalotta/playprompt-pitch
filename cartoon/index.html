@@ -223,6 +223,13 @@
     }
     .arrow { opacity: 0.35; font-size: 0.7em; color: var(--pp-ink); }
 
+    /* === SLIDE 8 SECTIONS === */
+    .sec { display: flex; flex-direction: column; gap: 12px; }
+    .sec-head {
+      font-family: 'Fraunces', serif; font-weight: 900; letter-spacing: -0.5px;
+      font-size: 1.45em; line-height: 1.18; margin: 0; color: var(--pp-ink);
+    }
+
     /* === DIFFERENTIATOR CHIPS (slide 8) === */
     .diffs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 6px; }
     .diff {
@@ -510,21 +517,26 @@
       <div class="bg-sunny"></div>
       <img class="logo-corner" src="logo-mark.svg" alt="PlayPrompt">
       <div class="slide-pad">
-        <h2 style="font-size: 1.9em; margin: 0;">A young, fast-growing market.<br><span class="grad">We bring our own chair.</span></h2>
-        <div class="stat-row">
-          <div class="stat fragment fade-up">
-            <div class="num">$40B</div>
-            <div class="lbl">K-12 EdTech, 2026</div>
-          </div>
-          <div class="stat fragment fade-up">
-            <div class="num">$9B</div>
-            <div class="lbl">AI Game Gen by 2034 <span style="opacity:0.7">(~$2B today)</span></div>
+        <div class="sec">
+          <h2 class="sec-head">A young, <span class="grad">fast-growing market.</span></h2>
+          <div class="stat-row">
+            <div class="stat fragment fade-up">
+              <div class="num">$40B</div>
+              <div class="lbl">K-12 EdTech, 2026</div>
+            </div>
+            <div class="stat fragment fade-up">
+              <div class="num">$9B</div>
+              <div class="lbl">AI Game Gen by 2034 <span style="opacity:0.7">(~$2B today)</span></div>
+            </div>
           </div>
         </div>
-        <div class="diffs fragment fade-up">
-          <div class="diff">Multi-modal AI</div>
-          <div class="diff">Pedagogy first, age-adaptive</div>
-          <div class="diff">Safe by design — still fun</div>
+        <div class="sec">
+          <h2 class="sec-head"><span class="grad">We bring our own chair.</span></h2>
+          <div class="diffs fragment fade-up">
+            <div class="diff">Multi-modal AI</div>
+            <div class="diff">Pedagogy first, age-adaptive</div>
+            <div class="diff">Safe by design — still fun</div>
+          </div>
         </div>
       </div>
       <div class="slide-no">8</div>
