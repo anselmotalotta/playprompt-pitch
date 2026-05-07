@@ -51,10 +51,18 @@
       font-size: 1.0rem; line-height: 1.6; color: var(--pp-ink-soft);
       max-width: 60ch; margin: 0 0 48px;
     }
+    .section-title {
+      font-family: 'Fraunces', serif; font-weight: 900; letter-spacing: -0.5px;
+      font-size: 1.4rem; color: var(--pp-ink); margin: 32px 0 18px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(155,89,182,0.18);
+    }
+    .section-title:first-of-type { margin-top: 8px; }
     .grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 24px;
     }
+    .grid + .section-title { margin-top: 56px; }
     a.card {
       display: block; text-decoration: none; color: inherit;
       background: #fff; border-radius: 16px; overflow: hidden;
@@ -107,11 +115,14 @@
     </header>
     <p class="subtitle">PlayPrompt — Nexus Luxembourg pitch deck</p>
     <p class="intro">
-      Five renderings of the same pitch. Same words, same flow — different visual
+      Ten renderings of the same pitch. Same words, same flow — different visual
       language for the children in the slides. The text and animations are
-      identical; only the imagery changes.
+      identical; only the imagery changes. On every closing slide where the
+      style is monochrome, the colored crayon logo on the paper stays in full
+      color — the only chromatic element in the frame.
     </p>
 
+    <h3 class="section-title">Photoreal &amp; Illustrated</h3>
     <div class="grid">
       <a class="card" href="photo/">
         <div class="thumb" style="background-image: url('photo/img/01-hero.png');"></div>
@@ -119,15 +130,6 @@
           <h2>Photoreal</h2>
           <p>Cinematic photographs, the original cut.</p>
           <span class="label">Realistic</span>
-        </div>
-      </a>
-
-      <a class="card" href="pencil/">
-        <div class="thumb" style="background-image: url('pencil/img/01-hero.png');"></div>
-        <div class="body">
-          <h2>Pencil</h2>
-          <p>Hand-drawn black-and-white portraits. The closing slide keeps the colored logo as the only chromatic element.</p>
-          <span class="label">Monochrome</span>
         </div>
       </a>
 
@@ -155,6 +157,63 @@
           <h2>Paper-cut</h2>
           <p>Layered colored paper, hand-crafted collage with soft shadows.</p>
           <span class="label">Hand-made</span>
+        </div>
+      </a>
+    </div>
+
+    <h3 class="section-title">Hand-drawn (B&amp;N)</h3>
+    <div class="grid">
+      <a class="card" href="pencil/">
+        <div class="thumb" style="background-image: url('pencil/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>Pencil</h2>
+          <p>Detailed graphite portrait. Polished tonal range, fine pencil hatching.</p>
+          <span class="label">Matita — refined</span>
+        </div>
+      </a>
+
+      <a class="card" href="sketch/">
+        <div class="thumb" style="background-image: url('sketch/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>Sketch</h2>
+          <p>Looser hand-drawn pencil — lighter shading, visible imperfections, the energy of a quick drawing-from-life.</p>
+          <span class="label">Schizzo — loose</span>
+        </div>
+      </a>
+
+      <a class="card" href="china/">
+        <div class="thumb" style="background-image: url('china/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>China</h2>
+          <p>Italian comic-book ink, Sergio Bonelli tradition (Dylan Dog, Tex Willer). Pure black + white, no greys.</p>
+          <span class="label">Inchiostro — fumetto</span>
+        </div>
+      </a>
+
+      <a class="card" href="watercolor/">
+        <div class="thumb" style="background-image: url('watercolor/img/01-hero.png');"></div>
+        <div class="body">
+          <h2>Watercolor</h2>
+          <p>Black-and-grey ink-wash editorial illustration — fluid washes, water-blooms, atmospheric.</p>
+          <span class="label">Acquarello B&amp;N</span>
+        </div>
+      </a>
+
+      <a class="card pending" href="charcoal/">
+        <div class="thumb"></div>
+        <div class="body">
+          <h2>Charcoal</h2>
+          <p>Rich deep blacks, smudged shadows, dramatic contrast. Traditional fine-art charcoal portrait.</p>
+          <span class="label">Carboncino</span>
+        </div>
+      </a>
+
+      <a class="card pending" href="woodcut/">
+        <div class="thumb"></div>
+        <div class="body">
+          <h2>Woodcut</h2>
+          <p>Bold woodcut/linocut printmaking — pure black + white, chiseled lines, expressive gouge marks.</p>
+          <span class="label">Xilografia</span>
         </div>
       </a>
     </div>
