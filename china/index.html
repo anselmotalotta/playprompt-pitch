@@ -102,6 +102,15 @@
       margin-bottom: 28px;
     }
     .hero img.logo { width: 150px; height: auto; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.45)); }
+    .brand-stack {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    }
+    .brand-stack .brand-name {
+      font-family: 'Nunito', sans-serif; font-weight: 900;
+      font-size: 0.65em; letter-spacing: -0.5px; line-height: 1;
+      color: #fff;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+    }
     .hero .tagline {
       font-family: 'Fraunces', serif; font-style: italic;
       font-size: 1.6em; opacity: 0.98; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,0.55);
@@ -304,7 +313,10 @@
       <div class="bg-img" style="background: linear-gradient(180deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.15) 35%, rgba(0,0,0,0.50) 100%);"></div>
       <div class="hero">
         <div class="hero-row">
-          <img class="logo" src="logo-playprompt-white.svg" alt="PlayPrompt">
+          <div class="brand-stack">
+            <img class="logo" src="logo-mark.svg" alt="">
+            <span class="brand-name">PlayPrompt</span>
+          </div>
           <div class="tagline">Imagine it.<br>Play it.</div>
         </div>
         <div class="tag-row">
